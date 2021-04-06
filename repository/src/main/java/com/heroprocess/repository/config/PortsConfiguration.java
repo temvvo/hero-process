@@ -17,8 +17,7 @@ public class PortsConfiguration {
 
     @Bean
     public HeroRepositoryPort heroRepositoryPort() {
-        return new H2HeroRepositoryPort(repository, mapper) {
-        };
+        return H2HeroRepositoryPort.builder().repository(repository).h2HeroMapper(mapper).build();
     }
 
 }
